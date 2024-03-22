@@ -1,0 +1,290 @@
+.container-ms
+{
+    margin: 0 auto;
+    padding: 0px;
+    overflow: hidden;
+    position: static;
+}
+
+.main-content
+{
+    display: flex;
+}
+
+.center-content
+{
+    width: 100%;
+    padding:0 20px;
+}
+
+@media (max-width: 768px)
+{
+    .center-content
+    {
+        width: 100%;
+    }
+}
+
+/* Header */
+#header
+{
+    min-height:50px;
+    background-color:hsl(0, 60%, 50%);
+    margin: 5px;
+    font-size: 28px;
+}
+
+ .table-container
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+}
+
+#DataButtonMode
+{
+    width: 100%;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 13px;
+    clear: both;
+    display: table;
+    display: grid;
+    float: center;
+}
+
+#HistoryDisplay
+{
+    float: center;
+    border: 0px solid #444E66;
+    background-color: #F2F1F1;
+    padding: 0px;
+    margin: 5px;
+}
+
+#ExportdataDisplay
+{
+    float: center;
+    border: 0px solid #444E66;
+    padding: 0px;
+    margin: 5px;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-spacing: 30px;
+    margin: 5px;
+}
+
+.button
+{
+    background-color: #888888; /* Green */
+    height: 45px;
+    border:  1px outset #CCFFFF;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 10px;
+    cursor: pointer;
+}
+
+.button:hover
+{
+    cursor: pointer;
+    background:#336699;
+    color: white;
+}
+
+#fasten_log_all
+{
+    width: 100%;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    font-size: 15px;
+    float: left;
+    text-align: left;
+    clear: both;
+    border-radius: 4px;
+    border: 0px solid #444E66;
+    word-wrap: break-word
+}
+
+/* Data */
+#fasten_log
+{
+	width: 100%;
+    height: calc(100vh - 200px);
+	overflow-y: auto;
+    font-size: 15px;
+	float: left;
+	text-align: left;
+    clear: both;
+    border-radius: 4px;
+    border: 0px solid #444E66;
+    word-wrap: break-word
+}
+
+.fasten_log_table
+{
+
+    border-collapse: collapse;
+    font-family: helvetica;
+    caption-side: top;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.fasten_log_table td, th
+{
+    background: white;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px;
+}
+
+.fasten_log_table th
+{
+    width: 100%;
+    box-shadow: 0 0 0 0px black;
+}
+
+thead th,
+tfoot th
+{
+    height:35px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-image: linear-gradient(to right, #AFD788	, #83C75D, #AFD788	, #83C75D);
+}
+
+.FastenLog
+{
+    overflow: scroll;
+    height: 0px;
+}
+
+/* Data Error */
+#error_fasten_log
+{
+    width: 100%;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+    font-size: 15px;
+    float: left;
+    text-align: left;
+    clear: both;
+    border-radius: 4px;
+    border: 1px outset #7F9DB9;
+    word-wrap: break-word;
+}
+
+.error_fasten_log_table
+{
+    border-collapse: collapse;
+    font-family: helvetica;
+    caption-side: top;
+    font-size: 15px;
+    border:  1px solid;
+    text-transform: capitalize;
+}
+
+.error_fasten_log_table td, th
+{
+    background: white;
+    box-sizing: border-box;
+    text-align: center;
+    border:  1px;
+}
+
+.error_fasten_log_table th
+{
+    width: 100%;
+    box-shadow: 0 0 0 0px black;
+}
+
+.FastenLogError
+{
+   overflow: scroll;
+    height: 0px;
+}
+
+/* Export data */
+#startdata
+{
+    width: 565px;
+    float: center;
+    border: 0px solid #444E66;
+    padding: 0.1rem;
+}
+
+#Enddata
+{
+    width: 565px;
+    border: 0px solid #444E66;
+    float: center;
+    padding: 0.1rem;
+}
+
+.calendar
+{
+    background-color: #fff;
+    padding: 0.1rem;
+    border-radius: 4px;
+}
+
+.calendar h3
+{
+    text-transform: uppercase;
+    margin-top: 0rem;
+    text-align: center;
+}
+
+.info
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.1rem;
+}
+
+.info p
+{
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.date
+{
+    border: 0px solid #ccc;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day,
+.day-name
+{
+    width: 80px;
+    height: 35px;
+    border: 1px solid #ccc;
+
+    font-size: 1rem;
+    text-align: center;
+    line-height: 35px;
+}
+
+.active
+{
+    background:#336699;
+}
+
+

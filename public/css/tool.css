@@ -1,0 +1,48 @@
+.container-ms
+{
+    margin: 0 auto;
+    padding: 0px;
+    overflow: hidden;
+    position: static;
+}
+
+.main-content
+{
+    display: flex;
+}
+
+.center-content
+{
+    width: 100%;
+    padding: 20px 40px;
+}
+
+/* Header */
+#header
+{
+    min-height:50px;
+    background-color:hsl(0, 60%, 50%);
+    margin: 5px;
+    font-size: 28px;
+}
+
+.center
+{
+    justify-content: center;
+    align-items: center;
+    border-spacing: 30px;
+    margin: 5px;
+}
+
+#Tool_Setting
+{
+    width: 100%;
+    padding: 0px;
+    overflow-y: no-display;
+    text-align: left;
+    font-size: 16px;
+    clear: both;
+    display: table;
+    display: grid;
+    float: center;
+}

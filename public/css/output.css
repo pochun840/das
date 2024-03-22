@@ -1,0 +1,248 @@
+.container-ms
+{
+    margin: 0 auto;
+    padding: 0px;
+    overflow: hidden;
+    position: static;
+}
+
+.main-content
+{
+    width: 100%;
+}
+
+.center-content
+{
+    width: 100%;
+    padding:0 0px;
+}
+
+@media (max-width: 768px)
+{
+    .center-content
+    {
+        width: 100%;
+    }
+}
+
+/* Header */
+#header
+{
+    min-height:50px;
+    background-color:hsl(0, 60%, 50%);
+    margin: 5px;
+    font-size: 28px;
+}
+
+#Table_Output
+{
+    float: center;
+    border: 1px solid #444E66;
+    background-color:#F2F1F1;
+    padding: 0px;
+    min-height: 50px;
+    margin: 5px;
+}
+
+#Button_Select
+{
+    width:70px;
+    height:35px;
+    font-size: 17px;
+    background-color: #999999;
+    border-radius: 5px;
+    border: 0px solid #444E66;
+    margin-left: 5px;
+}
+
+#TableOutputSetting
+{
+    width:100vw;
+    border: 0px solid #444E66;
+    background-color:#F5F5F5;
+    padding: 5px 5px;
+}
+
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1% 20%;
+    color: #ffffff;
+    background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+.buttonbox
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonbox input
+{
+    width: 16%;
+    height: 65px;
+    background: #333333;
+    color: #fff;
+    font-size: 20px;
+    border: 2px outset #fff;
+    border-radius: 10px;
+    transition: color 0.3s;
+}
+
+.buttonbox input:hover
+{
+    cursor: pointer;
+    background: #DDDDDD;
+    color: #000;
+}
+
+.buttonbox input:active
+{
+    background-color: #DDDDDD;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#OutputNew_Modal
+{
+    border-spacing: 20px;
+}
+
+/* The Modal (background) */
+.modal
+{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 60px;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content
+{
+    background-color: #AAAAAA;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+}
+
+.modal-body
+{
+    font-size: 16px;
+}
+
+/* Clear floats */
+.clearfix::after
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.button
+{
+    background-color: #888888; /* Green */
+    border: 1px outset #CCFFFF;
+    border-radius: 8px;;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 50px;
+    width: 80px;
+}
+
+.button:hover
+{
+    cursor: pointer;
+    background:#336699;
+    color: white;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-spacing: 40px;
+}
+
+/* Select Event */
+.select-block
+{
+    margin: 1px auto 0px;
+    position: relative;
+}
+
+select
+{
+    height: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    background-color: #888888;
+    border: none;
+    border: 1px solid;
+    border-radius: 2px;
+    color: white;
+    appearance: none;
+    padding: 0px 0px 0px 0px;
+    transition: color 0.s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+/* For IE <= 11 */
+select::-ms-expand
+{
+    display: none;
+}
+
+select:hover,
+select:focus
+{
+    color: #000000;
+    background-color: white;
+}
+
+/* Job Select*/
+#JobNameSelect
+{
+    width: 380px;
+    height: 200px;
+    font-size: 16px;
+    float: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: Opx;
+    background-color: #DDDDDD;
+    border: none;
+    border: 1px solid;
+    border-radius: 2px;
+    color: #000;
+    appearance: none;
+    padding: 0px 0px 10px 0px;
+    transition: color 0.s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+
+.modal-footer
+{
+    border-radius: 0;
+    padding: 0;
+}

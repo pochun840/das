@@ -1,0 +1,28 @@
+
+.container-ms
+{
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 0px;
+    overflow: hidden;
+    position: static;
+    background-color: #F2F1F1;
+}
+
+/* Header */
+#header
+{
+    min-height:45px;
+    background-color:hsl(0, 60%, 50%);
+    font-size: 28px;
+}
+
+#Job_Operation
+{
+    border: 1px solid #616161;
+    background-color:#B5B5B5;
+    min-height: 45px;
+    margin: 3px;
+}
+
