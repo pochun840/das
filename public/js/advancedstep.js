@@ -156,8 +156,6 @@ $(document).ready(function() {
     var inputs = document.querySelectorAll('input');
     let Tool_Max_Torque = parseFloat(document.getElementById('tool_maxtorque').value);
     let Tool_Max_RPM = parseFloat(document.getElementById('tool_maxrpm').value);
-    // console.log(Tool_Max_Torque);
-    // console.log(Tool_Max_RPM);
 
     // 遍历输入框并添加即时验证和值替换
     inputs.forEach(function(input) {
