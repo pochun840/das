@@ -8,27 +8,35 @@ class Data extends Controller
         $this->DataModel = $this->model('Datas');
     }
 
-    // 取得所有Jobs
-    public function index(){
+    // 取得所有鎖附資料
+    public function index($select_type){
+        
+        $select_type = $_GET['select_type'];
+
+        if(empty($select_type) || $select_type == "ALL"){
+            $type ="ALL";
+        }else if($select_type =="NG"){
+            $type ="NOK";
+        }else{
+            $type ="OK";
+        }
+
+        #依照鎖附狀態 取得個別資料
+        $Data_info = $this->DataModel->getData($type);
 
         $isMobile = $this->isMobileCheck();
-        $Data_ALL = $this->DataModel->getData('ALL');
-        $Data_OK = $this->DataModel->getData('OK');
-        $Data_NOK = $this->DataModel->getData('NOK');
         $device_info = $this->Device_Info();
-
         $data = [
             'isMobile' => $isMobile,
-            'Data_ALL' => $Data_ALL,
-            'Data_OK' => $Data_OK,
-            'Data_NOK' => $Data_NOK,
+            'Data_info' =>$Data_info,
             'device_info' => $device_info,
+            'select_type' => $select_type,
         ];
+ 
         
         $this->view('data/index', $data);
 
     }
-
 
     public function exportData()
     {
@@ -78,7 +86,7 @@ class Data extends Controller
             }
         }
 
-        // 设置 CSV 文件名
+        //建立 CSV 文件檔名
         $filename = 'export_data.csv';
 
         // 设置 CSV 文件的 HTTP 头信息
@@ -88,7 +96,7 @@ class Data extends Controller
         // 创建输出流
         $output = fopen('php://output', 'w');
 
-        // 写入 CSV 头部
+        //寫入CSV的header
         fputcsv($output, $header);
 
         $sn = 1;
@@ -101,7 +109,7 @@ class Data extends Controller
             $sn++;
         }
 
-        // 关闭输出流
+        // 關閉
         fclose($output);
         exit;
 

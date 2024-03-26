@@ -41,9 +41,8 @@ function OpenButton(ButtonMode)
     }
 }
 
-function DataMode(select)
+/*function DataMode(selectObject)
 {
-
     if (select.value == "all")
     {
         document.getElementById('fasten_log_all').setAttribute("style", "display:block");
@@ -62,4 +61,11 @@ function DataMode(select)
         document.getElementById('fasten_log').setAttribute("style", "display:none");
         document.getElementById('error_fasten_log').setAttribute("style","display:block");
     }
-}
+}*/
+
+
+function get_type(selectObject) {
+    var value = selectObject.value;
+    window.location = '?url=Data&select_type='+value;
+  
+  }

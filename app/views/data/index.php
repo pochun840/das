@@ -20,9 +20,9 @@
     }else{
         $calendar_lang = '';
     }
+
+  $select_type = array('ALL','OK','NG');   
 ?>
-
-
 <style>
 th, td
 {
@@ -52,10 +52,11 @@ th, td
                 <button id="bnt1" name="History_Display" class="button button3 active" onclick="OpenButton('History')"><?php echo $text['data_history'];?></button>
                 <button id="bnt2" name="Export_Data_Display" class="button button3" onclick="OpenButton('Exportdata')"><?php echo $text['data_export'];?></button>
                 <div style="position:absolute;z-index: 9;right: 1px;top: 10px;">
-                    <select id="data_select" class="form-select" onchange="DataMode(this)">
-                        <option value="all">ALL</option>
-                        <option value="ok">OK</option>
-                        <option value="ng">NG</option>
+                    <select id="data_select" class="form-select" onchange="get_type(this)">
+                        <?php foreach($select_type as $key1 => $value1){?>
+                          <option value="<?php  echo $value1;?>" <?php if($value1 == $data['select_type']){ echo "selected=selected";}?>> <?php  echo $value1;?> </option>
+                        <?php }  ?>
+          
                     </select>
                 </div>
             </div>
@@ -84,104 +85,21 @@ th, td
                             </thead>
                             <tbody id="" class="border-bottom" style="text-align: center; font-size: 1.8vmin; line-height: 1.8">
                                 <?php
-                                    foreach ($data['Data_ALL'] as $key => $value) {
-                                        echo '<tr>';
-                                        // echo '<td> '.($key+1).' </td>';
-                                        echo '<td> '.$value['system_sn'].' </td>';
-                                        echo '<td> '.$value['data_time'].' </td>';
-                                        echo '<td> '.$value['job_id'].' </td>';
-                                        echo '<td> '.$value['sequence_id'].' </td>';
-                                        echo '<td> '.$value['fasten_torque'].' </td>';
-                                        echo '<td class=\'funit\'> '.$value['torque_unit'].' </td>';
-                                        echo '<td> '.$value['fasten_angle'].' </td>';
-                                        echo '<td> '.$value['max_screw_count'].' </td>';
-                                        echo '<td> '.$value['last_screw_count'].' </td>';
-                                        echo '<td class=\'fstatus\'> '.$value['fasten_status'].' </td>';
-                                        echo '</tr>';
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Data OK -->
-                    <div class="table-container w3-padding" id="fasten_log" style="margin-bottom: 10px;display: none;">
-                        <div class="top-container">
-                            <h3 style="margin: 5px"><?php echo $text['data_history_success'];?></h3>
-                        </div>
-                        <table id="fasten_log_table" width="100%" style="text-align: center; font-size: 1.8vmin;">
-                            <thead>
-                                <tr>
-                                    <th><?php echo $text['column_no'];?></th>
-                                    <th><?php echo $text['column_datetime'];?></th>
-                                    <th><?php echo $text['job_name'];?></th>
-                                    <th><?php echo $text['seq_name'];?></th>
-                                    <th><?php echo $text['torque'];?></th>
-                                    <th><?php echo $text['column_unit'];?></th>
-                                    <th><?php echo $text['angle'];?></th>
-                                    <th><?php echo $text['column_total'];?></th>
-                                    <th><?php echo $text['column_count'];?></th>
-                                    <th><?php echo $text['column_status'];?></th>
-                                </tr>
-                            </thead>
-                            <tbody id="FastenLog" class="border-bottom" style="text-align: center; font-size: 1.8vmin">
-                                <?php
-                                    foreach ($data['Data_OK'] as $key => $value) {
-                                        echo '<tr>';
-                                        // echo '<td> '.($key+1).' </td>';
-                                        echo '<td> '.$value['system_sn'].' </td>';
-                                        echo '<td> '.$value['data_time'].' </td>';
-                                        echo '<td> '.$value['job_id'].' </td>';
-                                        echo '<td> '.$value['sequence_id'].' </td>';
-                                        echo '<td> '.$value['fasten_torque'].' </td>';
-                                        echo '<td class=\'funit\'> '.$value['torque_unit'].' </td>';
-                                        echo '<td> '.$value['fasten_angle'].' </td>';
-                                        echo '<td> '.$value['max_screw_count'].' </td>';
-                                        echo '<td> '.$value['last_screw_count'].' </td>';
-                                        echo '<td class=\'fstatus\'> '.$value['fasten_status'].' </td>';
-                                        echo '</tr>';
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- Data NG -->
-                    <div class="table-container w3-padding" id="error_fasten_log" style="display: none;">
-                        <div class="top-container">
-                            <h3 style="margin: 5px"><?php echo $text['data_history_fail'];?></h3>
-                        </div>
-                        <table id="error_fasten_log_table" width="100%" style="text-align: center; font-size: 1.5vmin; line-height: 1.5">
-                            <thead>
-                                <tr>
-                                    <th><?php echo $text['column_no'];?></th>
-                                    <th><?php echo $text['column_datetime'];?></th>
-                                    <th><?php echo $text['job_name'];?></th>
-                                    <th><?php echo $text['seq_name'];?></th>
-                                    <th><?php echo $text['torque'];?></th>
-                                    <th><?php echo $text['column_unit'];?></th>
-                                    <th><?php echo $text['angle'];?></th>
-                                    <th><?php echo $text['column_total'];?></th>
-                                    <th><?php echo $text['column_count'];?></th>
-                                    <th><?php echo $text['column_status'];?></th>
-                                </tr>
-                            </thead>
-                            <tbody id="FastenLogError" class="border-bottom" style="text-align: center; font-size: 1.8vmin; line-height: 1.5">
-                                <?php
-                                    foreach ($data['Data_NOK'] as $key => $value) {
-                                        echo '<tr>';
-                                        // echo '<td> '.($key+1).' </td>';
-                                        echo '<td> '.$value['system_sn'].' </td>';
-                                        echo '<td> '.$value['data_time'].' </td>';
-                                        echo '<td> '.$value['job_id'].' </td>';
-                                        echo '<td> '.$value['sequence_id'].' </td>';
-                                        echo '<td> '.$value['fasten_torque'].' </td>';
-                                        echo '<td class=\'funit\'> '.$value['torque_unit'].' </td>';
-                                        echo '<td> '.$value['fasten_angle'].' </td>';
-                                        echo '<td> '.$value['max_screw_count'].' </td>';
-                                        echo '<td> '.$value['last_screw_count'].' </td>';
-                                        echo '<td class=\'fstatus\'> '.$value['fasten_status'].' </td>';
-                                        echo '</tr>';
-                                    }
-                                ?>
+                                    foreach($data['Data_info'] as $key => $value) {?>
+                                        <tr>
+                                            <td><?php echo $value['system_sn'];?></td>
+                                            <td><?php echo $value['data_time'];?></td>
+                                            <td><?php echo $value['job_name'];?></td>
+                                            <td><?php echo $value['sequence_name'];?></td>
+                                            <td><?php echo $value['fasten_torque'];?></td>
+                                            <td class='funit'><?php echo $value['torque_unit'];?></td>
+                                            <td><?php echo $value['fasten_angle'];?></td>
+                                            <td><?php echo $value['max_screw_count'];?></td>
+                                            <td><?php echo $value['last_screw_count'];?></td>
+                                            <td class='fstatus'><?php echo $value['fasten_status'];?></td>
+                                        </tr>
+                                   <?php }?>
+                            
                             </tbody>
                         </table>
                     </div>
@@ -416,6 +334,8 @@ th, td
     document.getElementById("data_select").disabled = false; 
   });
 </script>
+
+
 <?php } ?>
 
 <?php require APPROOT . 'views/inc/footer.php'; ?>
