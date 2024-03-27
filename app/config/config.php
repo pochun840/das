@@ -17,8 +17,12 @@ define('IDASMODE', '1');
 define('SELECT_TYPE_ARR', array('ALL','OK','NG'));
 
 // 設定語言狀態
-//define('LANGUAGE',array(''));
-
+$language = array(
+	0=>array('简中','zh-cn'),
+	1=>array('繁中','zh-tw'),
+	2=>array('English','en-us'),
+);
+define('LANGUAGE',$language);
 
 
 // 抓取APP的檔案名稱，判斷是哪一個品牌
@@ -145,6 +149,4 @@ function get_brand_code()
 		return false;
 	}
 }
-
-# 鎖附型態
 

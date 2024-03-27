@@ -1,8 +1,9 @@
 <div class="container-ms">
     <div class="buttonbox" style="text-align: right; margin: 10px">
-        <input type="button" name="" value="简中" onclick="language_change('zh-cn');" >
-        <input type="button" name="" value="繁中" onclick="language_change('zh-tw');">
-        <input type="button" name="" value="English" onclick="language_change('en-us');">
+    
+    <?php foreach(LANGUAGE as $key =>$val){?>
+        <input type="button" name='<?php echo $val[1];?>' id= '<?php echo $val[1];?>'  value="<?php echo $val[0];?>" onclick="language_change()" >
+    <?php } ?>
     </div>
     <div>
         <h1 class="col-ms-3 pt-3" style="font-size: 50px; text-align: center; color: #fff"><?php echo $text['login_text']; ?></h1>
@@ -15,19 +16,6 @@
 </div>
 
   <script>
-    function language_change(language) {
-        $.ajax({
-          type: "POST",
-          url: "?url=Dashboards/change_language",
-          data: {'language':language},
-          dataType: "json",
-          encode: true,
-          async: false,//等待ajax完成
-        }).done(function (data) {//成功且有回傳值才會執行
-            window.location = window.location.href;
-        });
-    }
-
     $(document).ready(function () {
         <?php 
             if($data['error_message'] != ''){

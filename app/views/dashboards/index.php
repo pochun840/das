@@ -6,9 +6,10 @@
         <div class="center-content w3-center">
             <div style="position: relative;text-shadow:3px 5px 0 #444;" class="wrapper w3-center w3-text-red">
                 <div class="buttonbox" style=" top: 0;right: 0;text-align: right;position: absolute; ">
-                    <input type="button" name="" value="简中" onclick="language_change('zh-cn');" >
-                    <input type="button" name="" value="繁中" onclick="language_change('zh-tw');">
-                    <input type="button" name="" value="English" onclick="language_change('en-us');">
+                    <?php foreach(LANGUAGE as $key =>$val){?>
+                        <input type="button" name='<?php echo $val[1];?>' id= '<?php echo $val[1];?>'  value="<?php echo $val[0];?>" onclick="language_change()" >
+                    <?php } ?>
+            
                 </div>
                 <h1 class="col-ms-3 pt-5" style="font-size: 50px;"><?php echo TITLE_INDEX; ?></h1>
                 <div style="text-shadow:2px 2px 0 #444; font-size: 30px" class="text w3-center w3-text-yellow"><?php echo SUBTITLE_INDEX; ?></div>
@@ -38,18 +39,6 @@
             </div>
         </div>
 <script>
-    function language_change(language) {
-        $.ajax({
-          type: "POST",
-          url: "?url=Dashboards/change_language",
-          data: {'language':language},
-          dataType: "json",
-          encode: true,
-          async: false,//等待ajax完成
-        }).done(function (data) {//成功且有回傳值才會執行
-            location.reload();
-        });
-    }
 
     // WEB-iDAS FOR GTCS
     const text = document.querySelector('.text');
