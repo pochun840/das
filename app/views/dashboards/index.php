@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/main.css" type="text/css">
 
@@ -252,5 +250,3 @@
     </style>
   </div>
 </div>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

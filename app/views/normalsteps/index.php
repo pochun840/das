@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>css/target_torque_angle.css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/datatables.min.css">
@@ -931,6 +929,3 @@
   });
 </script>
 <?php } ?>
-
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

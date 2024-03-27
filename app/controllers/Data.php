@@ -9,7 +9,8 @@ class Data extends Controller
     }
 
     // 取得所有鎖附資料
-    public function index($select_type){
+    public function index($select_type)
+    {
         
         $select_type = $_GET['select_type'];
 
@@ -24,6 +25,9 @@ class Data extends Controller
         #依照鎖附狀態 取得個別資料
         $Data_info = $this->DataModel->getData($type);
 
+
+        
+
         $isMobile = $this->isMobileCheck();
         $device_info = $this->Device_Info();
         $data = [
@@ -32,8 +36,6 @@ class Data extends Controller
             'device_info' => $device_info,
             'select_type' => $select_type,
         ];
- 
-        
         $this->view('data/index', $data);
 
     }
@@ -64,6 +66,7 @@ class Data extends Controller
             for ($i=$start_year; $i <=$end_year ; $i++) { 
                 $total_count += $this->DataModel->get_range_data_count($start_date,$end_date,$i);
             }
+
             //超過XXX筆跳出，預設 10000
             if($total_count < 10000){
                 for ($i=$start_year; $i <=$end_year ; $i++) { 
@@ -89,7 +92,7 @@ class Data extends Controller
         //建立 CSV 文件檔名
         $filename = 'export_data.csv';
 
-        // 设置 CSV 文件的 HTTP 头信息
+        //設置 CSV 文件的 HTTP開頭
         header('Content-Type: text/csv');
         header('Content-Disposition: attachment; filename=' . $filename);
 

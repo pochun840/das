@@ -1,6 +1,3 @@
-
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/operation_m.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/c3.min.css" type="text/css">
@@ -442,6 +439,3 @@ function test(argument) {
 }
 
 </script>
-
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

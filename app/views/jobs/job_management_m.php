@@ -1,4 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
 
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/job_manager_m.css" type="text/css">
@@ -397,7 +396,6 @@
 	      reverse_cnt_mode: $('input[name=reverse_cnt_mode_option]:checked').val(),
 	    };
 
-	    // console.log($("#JobModalLabel").text());
 
 	    let valid_result = form_validate();
 	    let edit_mode = $("#edit_mode").val();
@@ -410,8 +408,6 @@
 				dataType: "json",
 				encode: true,
 			}).done(function (dupli) {//成功且有回傳值才會執行
-				// console.log(dupli);
-				// alert(555);
 				if(dupli['result'] && edit_mode != 'true'){
 					Swal.fire({
 					  title: '<?php echo $text['cover_confirm_text'];?>',
@@ -984,5 +980,3 @@
   });
 </script>
 <?php } ?>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

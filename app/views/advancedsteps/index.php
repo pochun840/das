@@ -1,6 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>css/advjob_step_manager.css">
 <script src="<?php echo URLROOT; ?>/js/advancedstep.js"></script>
@@ -1736,5 +1733,3 @@
   });
 </script>
 <?php } ?>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

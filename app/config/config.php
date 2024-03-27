@@ -13,6 +13,13 @@ define('SITENAME', 'iDAS');
 // iDAS連線模式 0:單機版 1:連線版
 define('IDASMODE', '1');
 
+// 鎖附頁面狀態(ALL , OK , NG)
+define('SELECT_TYPE_ARR', array('ALL','OK','NG'));
+
+// 設定語言狀態
+//define('LANGUAGE',array(''));
+
+
 
 // 抓取APP的檔案名稱，判斷是哪一個品牌
 $brand_code = get_brand_code();
@@ -138,3 +145,6 @@ function get_brand_code()
 		return false;
 	}
 }
+
+# 鎖附型態
+

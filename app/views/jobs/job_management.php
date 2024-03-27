@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/job_manager.css" type="text/css">
@@ -993,5 +991,3 @@
 <?php } ?>
 
 </div>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

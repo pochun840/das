@@ -1,4 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./css/output.css">
 
@@ -967,5 +966,3 @@ $(document).ready(function() {
   });
 </script>
 <?php } ?>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

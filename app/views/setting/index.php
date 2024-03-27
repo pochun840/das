@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/setting.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/fontawesome5.12.1.css" type="text/css">
@@ -1578,5 +1576,3 @@
 </script>
 <?php } ?>
 
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

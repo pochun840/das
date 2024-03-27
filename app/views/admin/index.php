@@ -1,9 +1,6 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
 
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/tool.css" type="text/css">
-
-
 
 <div class="container">
     <div class="w3-text-white w3-center" style="padding: 10px">
@@ -249,5 +246,3 @@
     }
 
 </script>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

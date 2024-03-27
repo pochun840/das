@@ -21,7 +21,7 @@ class Controller
         //權限
         $privilege = array("privilege"=>$_SESSION['privilege']);
         $data = array_merge($data,$privilege);
-        // var_dump($data);
+        
         // 如果檔案存在就引入它
         if(file_exists('../app/language/' . $data['language'] . '.php')){
             require_once '../app/language/' . $data['language'] . '.php';
@@ -31,7 +31,11 @@ class Controller
 
         // 如果檔案存在就引入它
         if(file_exists('../app/views/' . $view . '.php')){
+    
+            require_once APPROOT . 'views/inc/header.php'; 
             require_once '../app/views/' . $view . '.php';
+            require_once APPROOT . 'views/inc/footer.php';
+
         } else {
             die('View does not exist');
         }

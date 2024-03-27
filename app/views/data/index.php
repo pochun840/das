@@ -1,10 +1,9 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
 
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/data.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/flatpickr.min.css" type="text/css">
 
-<script src="<?php echo URLROOT; ?>js/data.js"></script>
+<script src="<?php echo URLROOT; ?>js/data.js?v=202403261400"></script>
 
 <script src="<?php echo URLROOT; ?>js/flatpickr.js"></script>
 <script src="<?php echo URLROOT; ?>js/flatpickr_zh-tw.js"></script>
@@ -20,8 +19,6 @@
     }else{
         $calendar_lang = '';
     }
-
-  $select_type = array('ALL','OK','NG');   
 ?>
 <style>
 th, td
@@ -53,7 +50,7 @@ th, td
                 <button id="bnt2" name="Export_Data_Display" class="button button3" onclick="OpenButton('Exportdata')"><?php echo $text['data_export'];?></button>
                 <div style="position:absolute;z-index: 9;right: 1px;top: 10px;">
                     <select id="data_select" class="form-select" onchange="get_type(this)">
-                        <?php foreach($select_type as $key1 => $value1){?>
+                        <?php foreach(SELECT_TYPE_ARR  as $key1 => $value1){?>
                           <option value="<?php  echo $value1;?>" <?php if($value1 == $data['select_type']){ echo "selected=selected";}?>> <?php  echo $value1;?> </option>
                         <?php }  ?>
           
@@ -83,7 +80,7 @@ th, td
                                     <th><?php echo $text['column_status'];?></th>
                                 </tr>
                             </thead>
-                            <tbody id="" class="border-bottom" style="text-align: center; font-size: 1.8vmin; line-height: 1.8">
+                            <tbody  class="border-bottom" style="text-align: center; font-size: 1.8vmin; line-height: 1.8">
                                 <?php
                                     foreach($data['Data_info'] as $key => $value) {?>
                                         <tr>
@@ -229,12 +226,11 @@ th, td
                 responseType: 'blob'
             },
             success: function(data) {
-                // console.log(data);
+                console.log(data);
                 const reader = new FileReader();
                 // This fires after the blob has been read/loaded.
                 reader.addEventListener('loadend', (e) => {
                   const text = e.srcElement.result;
-                  // console.log(text);
                   if(text.trim() === 'false'){
                     Swal.fire('單次匯出不得超過10000筆', '', 'warning')
                   }else{
@@ -247,7 +243,6 @@ th, td
                 });
                 // Start reading the blob as text.
                 reader.readAsBinaryString(data);
-
                 
             },
             error: function(xhr, status, error) {
@@ -338,4 +333,3 @@ th, td
 
 <?php } ?>
 
-<?php require APPROOT . 'views/inc/footer.php'; ?>

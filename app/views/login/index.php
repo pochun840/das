@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <div class="container-ms">
     <div class="buttonbox" style="text-align: right; margin: 10px">
         <input type="button" name="" value="简中" onclick="language_change('zh-cn');" >
@@ -157,5 +155,3 @@ button:hover
     background: #007BA5;
 }
 </style>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>

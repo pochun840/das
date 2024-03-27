@@ -1,5 +1,3 @@
-<?php require APPROOT . 'views/inc/header.php'; ?>
-
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/agent.css" type="text/css">
 
@@ -278,7 +276,7 @@
       s = String(s).padStart(2, "0");//補0到2位數
     　document.getElementById('day').innerHTML = y+'/'+m+'/'+d;
     　document.getElementById('time').innerHTML = h+':'+i+':'+s+'';
-    　setTimeout('ShowTime()',1000);
+    　XsetTimeout('ShowTime()',1000);
     }
 
     
@@ -303,5 +301,3 @@
     display: none;
   }
 </style>
-
-<?php require APPROOT . 'views/inc/footer.php'; ?>
