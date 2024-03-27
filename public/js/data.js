@@ -62,10 +62,3 @@ function OpenButton(ButtonMode)
         document.getElementById('error_fasten_log').setAttribute("style","display:block");
     }
 }*/
-
-
-function get_type(selectObject) {
-    var value = selectObject.value;
-    window.location = '?url=Data&select_type='+value;
-  
-  }

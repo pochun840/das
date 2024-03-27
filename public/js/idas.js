@@ -1,5 +1,5 @@
 
-// 切換語系
+// 切換語系(共用)
 function language_change() {
     var language = event.target.id;
     $.ajax({
@@ -12,4 +12,12 @@ function language_change() {
     }).done(function (data) {//成功且有回傳值才會執行
         location.reload();
     });
+}
+
+
+// data - 狀態切換
+function get_type(selectObject) {
+    var value = selectObject.value;
+    window.location = '?url=Data&select_type='+value;
+  
 }
