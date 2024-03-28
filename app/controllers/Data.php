@@ -11,7 +11,6 @@ class Data extends Controller
     // 取得所有鎖附資料
     public function index($select_type)
     {
-        
         $select_type = $_GET['select_type'];
 
         if(empty($select_type) || $select_type == "ALL"){
@@ -24,9 +23,6 @@ class Data extends Controller
 
         #依照鎖附狀態 取得個別資料
         $Data_info = $this->DataModel->getData($type);
-
-
-        
 
         $isMobile = $this->isMobileCheck();
         $device_info = $this->Device_Info();

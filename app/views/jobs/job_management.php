@@ -1,8 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/job_manager.css" type="text/css">
-<script async="" src="<?php echo URLROOT; ?>js/w3.js"></script>
-
 
 <div class="container-ms">
     <div class="w3-text-white w3-center">

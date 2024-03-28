@@ -1,7 +1,4 @@
-
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/job_manager_m.css" type="text/css">
-<script async="" src="<?php echo URLROOT; ?>js/w3.js"></script>
 
 <style>
 .t1{font-size: 16px; margin: 5px 0px; display: flex; align-items: center;}

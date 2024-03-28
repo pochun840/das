@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/sequence_manager_m.css" type="text/css">
-<script async="" src="<?php echo URLROOT; ?>js/w3.js"></script>
 
 <!-- <h1> <?php echo strtoupper($data['job_type']) ;?>  JOB MANAGEMENT</h1> -->
 

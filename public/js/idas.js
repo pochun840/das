@@ -21,3 +21,7 @@ function get_type(selectObject) {
     window.location = '?url=Data&select_type='+value;
   
 }
+
+
+
+

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/operation_m.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/c3.min.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/fontawesome5.12.1.css" type="text/css">

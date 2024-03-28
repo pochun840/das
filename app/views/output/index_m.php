@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./css/output_m.css">
-
 <div class="container-ms">
     <div class="w3-text-white w3-center">
         <table>

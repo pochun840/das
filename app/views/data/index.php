@@ -1,9 +1,8 @@
 
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/data.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/flatpickr.min.css" type="text/css">
 
-<script src="<?php echo URLROOT; ?>js/data.js?v=202403261400"></script>
+<script src="<?php echo URLROOT; ?>js/data.js"></script>
 
 <script src="<?php echo URLROOT; ?>js/flatpickr.js"></script>
 <script src="<?php echo URLROOT; ?>js/flatpickr_zh-tw.js"></script>

@@ -1,7 +1,4 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>css/agent.css" type="text/css">
-
-
 <div class="container">
     <div class="header">
         <div id="day" class="w3-right-align" style="font-size: 14px; margin-top: auto; margin: 10px">Date: 2023/16/10</div>

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>css/target_torque_angle_m.css">
 <script src="<?php echo URLROOT; ?>/js/target_torque_angle.js"></script>
 <script src="<?php echo URLROOT; ?>/js/normalstep.js"></script>

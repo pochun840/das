@@ -11,7 +11,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
 
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
+    <!--<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">-->
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/datatables.min.css">
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/sweetalert2.css">
     <!-- <script src="<?php echo URLROOT; ?>/js/main.js"></script> -->

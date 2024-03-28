@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>css/w3.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="./css/output.css">
 
 <div class="container-ms">
