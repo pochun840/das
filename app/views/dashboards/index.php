@@ -28,11 +28,11 @@
 
                 <?php if($_SESSION['privilege'] == 'admin'){ ?>
                 <div>
-                <?php if($data['agent_type'] == '2'){ ?>
-                <button class="menu-item lime" id="" style="font-size: 24px" onclick="window.location.href='?url=Agents'">Agent</button>
-                <?php } ?>
-                <button class="menu-item indigo" id="download" style="font-size: 24px" onclick="DB_sync('C2D')">Load</button>
-                <button class="menu-item deep-orange" id="upload" style="font-size: 24px;" onclick="DB_sync('D2C')">Save</button>
+                    <?php if($data['agent_type'] == '2'){ ?>
+                            <button class="menu-item lime" id="" style="font-size: 24px" onclick="window.location.href='?url=Agents'">Agent</button>
+                    <?php } ?>
+                            <button class="menu-item indigo" id="download" style="font-size: 24px" onclick="DB_sync('C2D')">Load</button>
+                            <button class="menu-item deep-orange" id="upload" style="font-size: 24px;" onclick="DB_sync('D2C')">Save</button>
                 </div>
                 <?php } ?>
             </div>
@@ -154,83 +154,6 @@
 */
     </style>
 
-    <script type="text/javascript">
-        // DB Sync
-        function DB_sync(argument) {
-            let title = '';
-            let message = '';
-            if(argument == 'C2D'){
-                title = '<?php echo $text['system_db_exchange_C2D_t']; ?>';
-                message = '<?php echo $text['system_db_exchange_C2D_m']; ?>';
-            }
-            if(argument == 'D2C'){
-                title = '<?php echo $text['system_db_exchange_D2C_t']; ?>';
-                message = '<?php echo $text['system_db_exchange_D2C_m']; ?>';
-            }
-
-            Swal.fire({
-                title: title,
-                text: message,
-                showCancelButton: true,
-                confirmButtonText: '<?php echo $text['confirm'];?>',
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    $.ajax({ // 提醒
-                        type: "GET",
-                        data: { way: argument },
-                        dataType: "json",
-                        url: "?url=Settings/SyncCheck",
-                    }).done(function(notice) { //成功且有回傳值才會執行
-                        if(notice.warning != ''){
-                            Swal.fire({ // DB sync notice
-                                title: 'Error',
-                                text: notice.warning,
-                            })
-                        }else{
-                            if(notice.notice != ''){
-                                Swal.fire({ // DB sync notice
-                                    title: '<?php echo $text['system_sync_warning_title']; ?>',
-                                    text: notice.notice,
-                                    showCancelButton: true,
-                                    confirmButtonText: '<?php echo $text['confirm'];?>',
-                                }).then((result2) => {
-                                    /* Read more about isConfirmed, isDenied below */
-                                    if (result2.isConfirmed) {
-                                        DB_sync2(argument);
-                                    }
-                                })
-                            }else{
-                                DB_sync2(argument);
-                            }    
-                        }                    
-                    });
-                }
-
-            }) 
-        }
-
-        function DB_sync2(argument) {
-            $.ajax({
-                type: "POST",
-                data: { way: argument },
-                dataType: "json",
-                url: "?url=Settings/db_sync",
-                beforeSend: function() {
-                    $('#overlay').removeClass('hidden');
-                },
-            }).done(function(data) { //成功且有回傳值才會執行
-                setTimeout(function() {
-                    $('#overlay').addClass('hidden');
-                }, 1000);
-                if (data.error != '') {
-                    alert(data.error);
-                }
-                console.log(data);
-            });
-        }
-
-    </script>
     <style>
         div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm, div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
             height: auto;
